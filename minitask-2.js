@@ -1,24 +1,22 @@
-function discountTotal(price) {
-  let purchaseTotal = price;
+function discountTotal(purchaseTotal) {
   let finalTotal = 0;
-
-  if (purchaseTotal) {
+  if (typeof purchaseTotal === 'number') {
     if (purchaseTotal > 500000) {
       if (purchaseTotal > 1000000) {
         finalTotal = purchaseTotal * 0.1;
-        total = purchaseTotal - finalTotal;
+        const total = purchaseTotal - finalTotal;
         console.log(`Total diskon anda adalah ${finalTotal}, harga total adalah ${total}, dari ${purchaseTotal}`);
       } else {
         finalTotal = purchaseTotal * 0.05;
-        total = purchaseTotal - finalTotal;
+        const total = purchaseTotal - finalTotal;
         console.log(`Total diskon anda adalah ${finalTotal}, harga total adalah ${total}, dari ${purchaseTotal}`);
       }
     } else {
       console.log(`Tidak dapat diskon, total belanja adalah ${purchaseTotal}`);
     }
   } else {
-    console.log('Silahkan masukan ulang total pembelian');
+    console.log('Input harus number');
   }
 }
 
-discountTotal(50000);
+discountTotal(1000000);
